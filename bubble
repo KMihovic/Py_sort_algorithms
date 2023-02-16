@@ -1,0 +1,19 @@
+def bubble_sort(item):
+    """
+    Shifting highest number to the end of list, by
+    comparing first 2 numbers and move higher,
+    than second 2 numbers etc.
+    """
+    for i in range(len(item)):
+        done_sorting = True
+        for j in range(len(item) - i - 1):
+            if item[j] > item[j + 1]:
+                item[j], item[j + 1] = item[j + 1], item[j]
+                done_sorting = False
+        if done_sorting:
+                break
+    return item
+
+
+item = [1, 5, 2, 7, 3, 78, 43, 8, 2]
+print(bubble_sort(item))
